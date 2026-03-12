@@ -1,0 +1,228 @@
+/* assets/css/print.css - Styles khusus untuk cetak struk thermal printer */
+
+@media print {
+    /* Reset semua styles yang tidak diperlukan */
+    * {
+      margin: 0 !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      background: white !important;
+      color: black !important;
+    }
+  
+    /* Sembunyikan elemen yang tidak perlu dicetak */
+    .no-print,
+    nav,
+    .sidebar,
+    .navbar,
+    .btn,
+    button,
+    .action-buttons,
+    .filter-section,
+    .pagination,
+    .modal,
+    .footer {
+      display: none !important;
+    }
+  
+    /* Body dan container untuk struk */
+    body {
+      font-family: 'Courier New', monospace !important;
+      font-size: 12px !important;
+      line-height: 1.2 !important;
+      background: white !important;
+      color: black !important;
+      width: 80mm !important; /* Lebar standar thermal printer */
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+  
+    /* Container struk */
+    .struk-container {
+      width: 100% !important;
+      max-width: 80mm !important;
+      margin: 0 auto !important;
+      padding: 5px !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  
+    /* Header struk */
+    .struk-header {
+      text-align: center !important;
+      border-bottom: 1px dashed #000 !important;
+      padding-bottom: 8px !important;
+      margin-bottom: 8px !important;
+    }
+  
+    .struk-header h2 {
+      font-size: 14px !important;
+      font-weight: bold !important;
+      margin-bottom: 2px !important;
+      text-transform: uppercase !important;
+    }
+  
+    .struk-header p {
+      font-size: 10px !important;
+      margin-bottom: 1px !important;
+    }
+  
+    /* Barcode */
+    .barcode {
+      text-align: center !important;
+      margin: 5px 0 !important;
+      font-family: 'Libre Barcode 39', monospace !important;
+      font-size: 20px !important;
+    }
+  
+    /* Info transaksi */
+    .struk-info {
+      margin-bottom: 8px !important;
+      font-size: 10px !important;
+    }
+  
+    .struk-info p {
+      margin-bottom: 2px !important;
+    }
+  
+    /* Items/Produk */
+    .struk-items {
+      margin-bottom: 8px !important;
+    }
+  
+    .struk-item {
+      display: flex !important;
+      justify-content: space-between !important;
+      margin-bottom: 4px !important;
+      padding-bottom: 2px !important;
+      border-bottom: 1px dotted #ccc !important;
+      font-size: 10px !important;
+    }
+  
+    .item-info {
+      flex: 1 !important;
+    }
+  
+    .item-name {
+      font-weight: bold !important;
+      margin-bottom: 1px !important;
+    }
+  
+    .item-details {
+      font-size: 9px !important;
+      color: #666 !important;
+    }
+  
+    .item-subtotal {
+      text-align: right !important;
+      font-weight: bold !important;
+      min-width: 50px !important;
+    }
+  
+    /* Total dan pembayaran */
+    .struk-total {
+      border-top: 2px solid #000 !important;
+      padding-top: 8px !important;
+      margin-top: 8px !important;
+      font-weight: bold !important;
+    }
+  
+    .struk-total .struk-item {
+      border-bottom: none !important;
+      font-size: 11px !important;
+    }
+  
+    /* Footer struk */
+    .struk-footer {
+      text-align: center !important;
+      margin-top: 10px !important;
+      padding-top: 8px !important;
+      border-top: 1px dashed #000 !important;
+      font-size: 9px !important;
+    }
+  
+    .struk-footer p {
+      margin-bottom: 2px !important;
+    }
+  
+    /* Utility classes untuk struk */
+    .text-center {
+      text-align: center !important;
+    }
+  
+    .text-right {
+      text-align: right !important;
+    }
+  
+    .text-bold {
+      font-weight: bold !important;
+    }
+  
+    .text-small {
+      font-size: 9px !important;
+    }
+  
+    .mt-1 {
+      margin-top: 4px !important;
+    }
+  
+    .mb-1 {
+      margin-bottom: 4px !important;
+    }
+  
+    /* Garis pemisah */
+    .divider {
+      border-top: 1px dashed #000 !important;
+      margin: 5px 0 !important;
+    }
+  
+    /* Untuk tabel dalam struk (jika ada) */
+    .struk-table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      font-size: 10px !important;
+    }
+  
+    .struk-table th,
+    .struk-table td {
+      padding: 2px 0 !important;
+      text-align: left !important;
+      border-bottom: 1px dotted #ccc !important;
+    }
+  
+    .struk-table th {
+      font-weight: bold !important;
+    }
+  
+    .struk-table .text-right {
+      text-align: right !important;
+    }
+  
+    /* Page break avoidance */
+    .page-break {
+      page-break-before: always !important;
+    }
+  
+    .avoid-break {
+      page-break-inside: avoid !important;
+    }
+  }
+  
+  /* Style untuk preview struk di browser */
+  @media screen {
+    .struk-container.print-preview {
+      max-width: 80mm;
+      margin: 20px auto;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background: white;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+    }
+  }
+  
+  /* Thermal printer simulation */
+  @page {
+    size: 80mm auto;
+    margin: 0;
+  }
